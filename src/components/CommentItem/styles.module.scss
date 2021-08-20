@@ -1,0 +1,9 @@
+.commentItem {
+  background: #f5f5f5;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border-radius: 0px 5px 5px 5px;
+  + .commentItem {
+    margin-top: 10px;
+  }
+}
