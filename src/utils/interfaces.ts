@@ -7,6 +7,12 @@ export interface IComment {
 export interface IMeetup {
   id: string;
   title: string;
+  formattedTitle?: string;
   description: string;
   comments: IComment[];
+}
+export interface IRow {
+  index: number;
+  style: any;
+  data: IMeetup[];
 }

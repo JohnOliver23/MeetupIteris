@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import { IComment } from "../../utils/interfaces";
 import CommentItem from "../CommentItem";
 import styles from "./styles.module.scss";

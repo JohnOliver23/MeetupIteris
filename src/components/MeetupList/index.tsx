@@ -1,8 +1,10 @@
 import React, { useState, useEffect, FormEvent } from "react";
 import styles from "./styles.module.scss";
 import { IMeetup } from "../../utils/interfaces";
+// import { FixedSizeList as List } from "react-window";
 import { v4 as uuid_v4 } from "uuid";
 import api from "axios";
+// import Row from "../Row";
 import CommentList from "../CommentList";
 
 const MeetupList = () => {
@@ -64,6 +66,16 @@ const MeetupList = () => {
       </form>
 
       <div className={styles.meetupList}>
+        {/* <List
+          height={600}
+          itemCount={meetups.length}
+          style={styles}
+          itemSize={1000}
+          width={"100%"}
+          itemData={meetupList}
+        >
+          {Row}
+        </List> */}
         {meetupList.map((meetup) => (
           <section className={styles.containerInfos} key={meetup.id}>
             <strong>{meetup.formattedTitle}</strong>
