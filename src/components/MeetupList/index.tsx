@@ -6,12 +6,15 @@ import { v4 as uuid_v4 } from "uuid";
 import api from "axios";
 // import Row from "../Row";
 import CommentList from "../CommentList";
+import useKonamiCode from "../hooks/useKonamiCode";
 
 const MeetupList = () => {
   const [meetups, setMeetups] = useState<IMeetup[]>([]);
 
   const [newMeetupTitle, setNewMeetupTitle] = useState("");
   const [newMeetupDescription, setNewMeetupDescription] = useState("");
+
+  const { sequence, rightSequence } = useKonamiCode();
 
   useEffect(() => {
     api.get("http://localhost:3333/meetups").then((response) => {
@@ -45,6 +48,7 @@ const MeetupList = () => {
 
   return (
     <>
+      {rightSequence && <h1>Rodou</h1>}
       <form className={styles.formMeetups} onSubmit={addNewMeetup}>
         <input
           className={styles.inputText}
